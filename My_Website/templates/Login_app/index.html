@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+{% extends 'Login_app/base.html' %}
+{% block body_block %}
+{% if user.is_authenticated %}
+<p><b>Hi, {{ user_basic_info.username }} </b></p>
+<p><b>Your Email: </b>{{ user_basic_info.email }}</p>
+<p><b>Website Link: </b>{{ user_more_info.website_link }}</p>
+<img src="/media/{{ user_more_info.profile_pic }}" width="200px">
+{% else %}
+<h1>Index Page</h1>
+{% endif %}
+{% endblock %}
